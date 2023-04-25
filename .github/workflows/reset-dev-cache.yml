@@ -19,7 +19,9 @@ jobs:
 
       - name: Echo
         run: |
-          echo "github.event: ${{ github.event }}"
+          echo "github.event_name: ${{ github.event.event_name }}"
+          echo "github.event.ref: ${{ github.event.ref }}"
+          echo "github.event.ref_type: ${{ github.event.ref_type }}"
           echo "runner.os: ${{ runner.os }}"
           echo "Branch ref: ${{ github.ref }}"
           echo "Branch name: ${{ github.ref_name }}"

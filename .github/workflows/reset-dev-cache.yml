@@ -14,10 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
+          ref: ${{ github.ref }}
           fetch-depth: 0
 
       - name: Echo
         run: |
+          echo "github.event: ${{ github.event }}"
           echo "runner.os: ${{ runner.os }}"
           echo "Branch ref: ${{ github.ref }}"
           echo "Branch name: ${{ github.ref_name }}"
